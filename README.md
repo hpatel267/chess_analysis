@@ -1,13 +1,13 @@
 # Chess Games Analysis
-## by Harsh Patel <img src ="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/2aba3bf0-2e54-433f-9938-dab5e15cdb57" height="125" align="right">
+## by Harsh Patel <img src ="https://github.com/hpatel267/chess_analysis/assets/151773608/1ed36501-7147-4f4f-af1f-032bad99fe75" height="125" align="right">
 **Date last Updated: 2/6/2022**
 
 ## Table of Contents
 
-[<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/e6b0563b-c333-4d8a-852c-7d91ab1024d2" width="150">](#data-collection)
-[<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/fa133f15-b407-4431-a183-9aa8314752b8" width="150">](#data-cleaning)
-[<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/25439d60-4f34-474f-a8ea-ac2d31cf33f3" width="150">](#data-analysis)
-[<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/6eba635f-32ec-4d4a-831d-186d8818ef7a" width="150">](#conclusion)
+[<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/e7047b27-9ec0-467d-80f9-60846b3b1576" width="150">](#data-collection)
+[<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/73c1b0c7-8f4a-4ea9-9cc0-c46dc134af12" width="150">](#data-cleaning)
+[<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/350dcbed-dead-42d3-93d8-e6437155bef7" width="150">](#data-analysis)
+[<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/083ae2b8-c322-4f56-9079-150cb9c62666" width="150">](#conclusion)
 
 ## Overview 
 For this project, I conducted an in-depth analysis of all the chess games I have played on Chess.com from 2018 to 2023. My objective was to uncover insights to improve my gameplay, and to illustrate the intricate nature of chess.
@@ -16,7 +16,7 @@ I chose to exclusively utilize the programming language R for this analysis. Des
 
 # Data Collection 
 
-<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/26266505-947a-4a8e-b0fc-f9f62027d956" width="200" align="left">
+<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/c49181a4-84ec-4ae6-8127-049b95b9648c" width="200" align="left">
 
 [Chess.com](https://www.chess.com) archives data for every game played on their platform. However, the website limits the number of games that can be retrieved at once. 
 
@@ -60,21 +60,21 @@ The raw data was received in two long format CSV files. Each game comprises 23 l
 The current position data represents the final board position, and is formatted using Forsyth-Edwards Notation (FEN). FEN is a standardized notation for describing chess positions, making it possible to represent any board state. For a detailed explanation of FEN, I highly recommend reading this [Forsyth-Edwards Notation (FEN) article](https://www.chess.com/terms/fen-chess#why-is-fen-important)
 
 <p align="center">
-    <img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/ea3c8bed-50fc-4f43-992d-4856651b40c5" height="200">
+    <img src="https://github.com/hpatel267/chess_analysis/assets/151773608/f2374b48-be9e-41e7-837d-f1301bbe73a1" height="150">
 </p>
 
 ### *Time Control*
 ~~~~~
 [TimeControl "60+1"]
 ~~~~~
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/acadb469-7417-48a8-a1db-b97160a9d915" height="150" align="right">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/8bf3252c-f4d8-4417-a1f5-1cc3c0aa470c" height="150" align="right">
 
 The Time Control parameter defines the duration of time allocated to each player. Each player's time diminishes during their respective turns, and if their clock reaches zero, they forfeit the game. The first number in the Time Control specification denotes the initial total time for each player in seconds, while the second number indicates the increment time added to their playtime after completing a move.
 
 In this dataset, games are categorized into formats known as Bullet, Blitz, and Rapid, based by their Time Controls seen below.
 
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/1fa4e59d-9fe2-4c6b-94e3-24d652c337c7" height="175">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/47dcb9a1-1f24-4b25-ba18-426ff71a288f" height="175">
 </p>
 
 ### *Elo Rating*
@@ -93,7 +93,7 @@ In this dataset, each player's Elo rating is categorized by the different Time C
 1. d4  Nf6 2. c4  d6 3. Nc3  Nbd7 4. Bg5  h6 5. Bh4  g5 6. Bg3  Bg7 7. e3  O-O 8. Nf3  Nh5 9. Be2  Nxg3 10. hxg3  c5 11. Qd3  cxd4 12. exd4  Qb6 13. Nxg5  Bxd4 14. Qh7# 1-0
 ~~~~~
 
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/673db986-b46a-4d61-adc3-e1bb2182aeda" height="200" align="right">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/d18d2c37-8c55-4d78-97cd-d206bd0b8f30" height="200" align="right">
 
 Algebraic notation records every move made during a game. Each turn is marked with the turn number, followed by White's and then Black's move. Typically, a move begins with a letter representing the piece, followed by a combination of letters and numbers indicating the destination square. Various notations exist, including the use of "x" to signify a capture, as demonstrated in the example image on the right for turn 9 of this game. Read this [Chess Notation article](https://www.chess.com/terms/chess-notation) for a deeper dive.
 
@@ -101,7 +101,7 @@ Algebraic notation records every move made during a game. Each turn is marked wi
 <br>
 
 # Data Cleaning 
-<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/2f9099c9-afaf-4649-8b85-165dd4475659" width="200" align="right">
+<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/1a76e9fb-68ad-4ae9-a5b7-fd8dbad96a95" width="200" align="right">
 
 The primary objective of the data cleaning process was to convert the lengthy CSV text files into a structured data frame format. Each game entry in the raw data comprises 23 lines of metadata. I established a Base Vector that increments by 23, enabling the identification of the initial row for each game's metadata.
 
@@ -111,14 +111,14 @@ Subsequently, each game attribute was assigned a fixed index relative to the Bas
 
 ### *Base Vector and White Elo Vector Visual*
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/c875f2f2-f4b6-452b-8149-ce26e3cecb67">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/f37d5419-3808-4d13-acb1-e9ee6ab59156">
 </p>
 
 <br>
 
 ### *White Elo Data Pull and Corrections*
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/4d4604fa-27b1-4fb8-afd1-fa9a3b7a6deb">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/2f93497e-bb95-4320-9c54-9f309f8fe70c">
 </p>
 
 The methodology employed allowed for the extraction of every game attribute, which then was combined into a single data frame with correct data types. There were some nuanced steps detailed in the comments of the R code "Code - Data Cleaning.R".
@@ -127,7 +127,7 @@ For instance, a corrupted game was discovered missing certain lines of metadata.
 
 # Data Analysis
 
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/87eb6913-4bae-403e-babe-c23f05b749cd" height="200" align="left">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/2450e833-1990-49b2-8ae6-c422e387a6b8" height="200" align="left">
 
 The step-by-step preparation of the data, from the data frame to the subsequent data visualizations, is documented in the file "Code - Chess Game Analysis.R". Most common tools were the use of conditional functions, filter functions, aggragate functions, descriptive statistics functions, and ggplot data visualizations.
 
@@ -139,7 +139,7 @@ Each data visualization is presented with insights directly derived from the dat
 ## Elo Trends
 
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/e4cc15aa-9bbf-4399-8426-ca821e9abd81" height="300">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/43a86be5-8774-43f4-8754-a363e3ce1bd5" height="300">
 </p>
 
 ### *Insights*
@@ -159,7 +159,7 @@ However, my Blitz Elo saw improvement as Blitz serves as a middle ground between
 ## Average Piece Counts (Win vs Lost)
 
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/5c4bc53f-8b41-49cd-a3df-52c289f2d742" height="350">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/ebd9dac3-e368-4b1d-8a61-632c9dfc5612" height="350">
 </p>
 
 ### *Insights*
@@ -173,7 +173,7 @@ At my level of play, both my opponent and I rely heavily on our Queens and Pawns
 
 ## Checkmating Piece
 
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/3d91ffa5-748b-44e9-9cb7-843020303138" height="350" align="right">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/f0f81f80-f382-4e7d-b8a2-0972c1176f8c" height="350" align="right">
 
 ### *Insights*
 "This data outlines the pieces I used to deliver checkmate in games
@@ -188,7 +188,7 @@ Knights, although stronger than Pawns, are challenging to use for delivering che
 
 ## Queen Checkmating Squares
 
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/4b7b4e44-ff6a-4d1e-a56c-fbe704f4c3c8" height="400" align="right">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/32ab7993-0c00-4a04-8998-2674f107025b" height="400" align="right">
 
 ### *Insights*
 This data is showing the total number of times I delivered checkmate with the Queen on each square.
@@ -205,7 +205,7 @@ As White, I frequently employ the Queen’s Gambit opening, which applies additi
 
 ## Notable Checkmates
 
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/56e41a6c-26e7-4760-a880-b6fd01bc516d" height="325" align="right">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/b5bdf38b-d2d9-4d14-9c51-0170b7fdc613" height="325" align="right">
 
 Utilizing the analyzed data for games won by checkmate, I searched for games that ended in notable checkmates.
 
@@ -221,12 +221,11 @@ Can you identify the winning move for White seen in the image on the right?
   When executed correctly by White, this combination is termed a "Mate in Three." This implies that regardless of Black's response, White will achieve checkmate within three moves.
 
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/16a2bdf8-e6a9-4df0-995d-f4d9cd9768da" height="300">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/cd56fcfa-0bb7-466e-af1c-7a7b136eaf71" height="300">
 </p>
 
-
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/fada60b3-000d-464a-8672-28eefcf254bd">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/db41ae8e-b5d7-4a0e-8456-f797e1703cad">
 </p>
 
 </details>
@@ -245,7 +244,7 @@ Here are some other notable checkmates that can be viewed on Chess.com
 
 # Conclusion
 
-<img src="https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/72ec127f-6514-41c2-9f92-b8b8890492c5" width="200" align="right">
+<img src="https://github.com/hpatel267/chess_analysis/assets/151773608/b0a12f5e-2081-4a08-9239-48c0dce0996d" width="200" align="right">
 
 In this analysis, I deepened my understanding of R's functions and capabilities. Moving forward, I'll use this code to assess my progress in two key areas:
 * Enhancing my Knight chess play.
@@ -258,7 +257,7 @@ Exploring Chess documentation, including Forsyth-Edwards Notation and Algebraic 
 I hope this analysis inspires you to play chess! It's a timeless game that people at all levels can enjoy
 
 <p align="center">
-<img src = "https://github.com/hpatel267/Harsh-Patel-Portfolio/assets/151773608/06dff93e-355a-453d-864f-9bbefc6e09ea">
+<img src = "https://github.com/hpatel267/chess_analysis/assets/151773608/09e29216-8d49-4f8c-bc80-3559d85f0afe">
 </p>
 
 <br>
